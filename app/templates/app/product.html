@@ -1,0 +1,35 @@
+﻿{% extends "app/layout.html" %}
+
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Товары{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<p id="backbuttton"><a href="{% url 'catalog' %}"> Назад </a></p>
+<h2 id="Centered">{{ product.name }}</h2>
+
+<div class="product-detail">
+    <img id="ProductIMG" align="right" src="{{ product.image.url }}" alt="Изображение товара" height="300" width="250"><br/>
+    <h3><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h3><br/>
+    <p class="price">{{ product.price }} рублей</p>
+        {% if user.is_authenticated %}
+        <form action="{% url "cart_add" product.id %}" method="post">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <input type="submit" value="Добавить в корзину">
+        </form><br/>
+        {% else %}
+        <h3> Для добавления товара в корзину, пожалуйста, авторизуйтесь.</h3>
+        {% endif %}
+    <p>Описание товара:</p>
+    <p>{{ product.description}}</p><br/>
+    <br/>
+</div>
+
+{% if user.is_authenticated %}
+
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+        	
+    <table class="table table-striped">
+    <h3>Ваша история заказов</h3>
+    <hr>
+    
+  <tr>
+    <th>ID заказа</th>
+    <th>Дата заказа</th> 
+    <th>Дата изменения</th>
+  </tr>
+  {% for order in my_orders %}
+  <tr>
+    <td scope="row"><a href="{% url 'accountorder' param=order.id %}">{{order.id}}</a></td>
+    <td>{{order.created}}</td>
+    <td>{{order.updated}}</td>
+  </tr>
+  {% endfor %}
+
+</table>
+  
+</div>
+
+{% endblock %}

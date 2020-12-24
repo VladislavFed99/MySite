@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+{% extends "app/layout.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<h2 id="Centered">Регистрация пользователя</h2>
+
+<form method="POST"> {% csrf_token %}
+
+<div>
+
+{{ regform.as_p}}
+
+<button id="Centered" type="submit" class="save btn btn-default" > Зарегистрировать </button>
+
+</div>
+
+</form>
+
+{% endblock %}

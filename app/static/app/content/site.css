@@ -1,0 +1,120 @@
+body {
+    padding-top: 150px;
+    padding-bottom: 20px;
+    background: white url("images/bg.png") no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #F5FFFA;
+    border-radius: 25px;
+    border: 6px solid thick;
+}
+
+footer {
+    display: block;
+}
+
+#NewsIMG {
+    margin-right: 25px;
+    margin-left: 50px;
+}
+
+#ProductIMG {
+    margin-left: 50px;
+    margin-right: 40px;
+}
+
+#Pproduct {
+    text-align: left;
+
+}
+
+#backbuttton {
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+#NewsIMGindex {
+    margin-top: 15px;
+}
+
+#IndexCol {
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+#foot1 {
+    text-align: right;
+    margin-right: 10px;
+}
+
+#tittile {
+    margin-top: 10px;
+    border-radius: 25px;
+    border: 6px solid thick;
+    text-align: center;
+}
+
+#subheader {
+    background-color:Linen;
+    opacity: .4;
+}
+
+#Centered {
+    text-align: right;
+}
+
+#indexh3 {
+    text-overflow: ellipsis; /* will make [...] at the end */
+    width: 370px; /* change to your preferences */
+    white-space: nowrap; /* paragraph to one line */
+    overflow: hidden; /* older browsers */
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.Row {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    margin-right: 15px;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*body {
+    background: white url("images/bg1.jpg") no-repeat center;
+}*/

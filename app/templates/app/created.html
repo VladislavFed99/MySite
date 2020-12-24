@@ -1,0 +1,9 @@
+﻿{% extends "app/layout.html" %}
+
+{% block title %}Спасибо!{% endblock %}
+
+{% block content %}
+    <h1>Спасибо!</h1>
+    <p>Ваш заказ успешно размещён. Ваш номер заказа:
+        <strong>{{ order.id }}</strong>.</p>
+{% endblock %}

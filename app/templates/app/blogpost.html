@@ -1,0 +1,37 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<p id="backbuttton"><a href="{% url 'blog' %}"> Назад </a></p>
+<h2> {{post_1.title}} </h2>
+
+{% if post_1.image and post_1.image.url != '/media/temp.jpg' %}
+    <img src="{{ post_1.image.url }}" alt="Картинка" width="300" height="200"/>
+{% endif %}
+
+{% autoescape off %}
+<p> {{post_1.content|linebreaksbr}} </p>      {# вывод текста по абзацам #}
+{% endautoescape %}
+
+{% if user.is_authenticated %}
+
+    <h3>Добавить комментарий</h3>
+    <form method="POST" >{% csrf_token %} {# защита от атак CSRF#}
+    <div>
+        {{form.as_p}}
+        <button type="submit" class="save btn btn-default" > Отправить комментарий </button>
+    </div>
+    </form>
+
+{% else %}
+    <h3> Для добавления своего комментария, пожалуйста, авторизуйтесь </h3>
+{% endif %}
+
+{% for comment in comments %}
+    <hr/>
+    <h7> {{comment.date}} </h7>
+    <p><a href="#" class="text-info"> {{comment.author}} </a></p>
+    <p> {{comment.text|linebreaksbr}} </p>
+{% endfor %}
+
+{% endblock %}

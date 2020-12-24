@@ -1,0 +1,37 @@
+﻿{% extends "app/layout.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<style>
+    h2 {text-align: center;}
+</style>
+
+<h2>Новостной портал</h2>
+
+
+<b>Информация:</b>
+<p>Вы можете обратиться к нам с просьбой о размещении своей новости, есть возможность стать постоянным автором в нашем новостном блоге. 
+    Обращайтесь по указаным адресам в разделе контактам, мы будем рады сотрудничать с вами!
+</p>
+
+<b>Руководитель:</b>
+<p>Информация засекречена</p>
+
+<b>График работы:</b>
+<p>Круглосуточно</p>
+<div class="col-md-4" id="IndexCol">
+        <img align="right" src="{% static 'app/images/kit1.gif'%}" width="350" height="350" alt="Фото" />
+</div>
+
+<div class="col-md-4" id="IndexCol">
+        <img align="right" src="{% static 'app/images/kit.gif'%}" width="350" height="350" alt="Фото" />
+</div>
+
+<div class="col-md-4" id="IndexCol">
+        <img align="right" src="{% static 'app/images/ku.gif'%}" width="350" height="350" alt="Фото" />
+</div>
+
+
+{% endblock %}

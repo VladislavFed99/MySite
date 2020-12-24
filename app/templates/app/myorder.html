@@ -1,0 +1,16 @@
+﻿{% extends 'app/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<p id="backbuttton"><a href="{% url 'account' %}"> Назад </a></p>
+<h3 id="Centered"> {{myorder.order}} </h3>
+<p> {{myorder.product}} <p>
+<p>{{myorder.price}}</p>
+<p>{{myorder.quantity}}</p>
+
+<form action="" method="get">
+    <button class = "btn btn-default" name="DeleteButton" value="{{myorder.id}}">Удалить заказ</button>
+</form>
+
+{% endblock %}

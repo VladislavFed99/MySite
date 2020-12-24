@@ -1,0 +1,85 @@
+﻿{% extends "app/layout.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="tittile" class="jumbotron">
+    <h2>Новостной портал</h2>
+    <p class="lead">Любые новости для вас, самые интерестные темы будут открыты и доступны вашему взору.</p>
+</div>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="{% static 'app/images/fon.jpg'%} " alt="Первый слайд" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Узнайте больше о нас <br/>
+                    <a class="btn btn-default" href="{% url 'about' %}">
+                        Читать далее
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="{% static 'app/images/fon2.jpg'%}" alt="Второй слайд"  class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                   Узнайте больше о нас <br/>
+                    <a class="btn btn-default" href="{% url 'about' %}">
+                        Читать далее
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src=" {% static 'app/images/fon3.jpg'%} " alt="Третий слайд"  class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Узнайте больше о нас <br/>
+                    <a class="btn btn-default" href="{% url 'about' %}">
+                        Читать далее
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Предыдущий</span>
+    </a>
+
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Следующий</span>
+    </a>
+
+</div>
+
+{% for post in posts %}
+
+    <div class="col-md-4" id="IndexCol">
+        <h3 id="Indexh3">{{post.title}}</h3>
+        <img id="NewsIMGindex" height="130" width="200" alt="" src="{{ MEDIA_URL }}{{ post.image }}">
+        <h4> {{post.posted}} </h4>
+        <p>
+            {{post.description}}
+        </p>
+        <p><a class="btn btn-default" href="{% url 'blogpost' parametr=post.id %}">Читать далее... &raquo;</a></p>
+    </div>
+
+{% endfor %}
+
+
+{% endblock %}

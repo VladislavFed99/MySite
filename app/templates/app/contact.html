@@ -1,0 +1,36 @@
+﻿{% extends "app/layout.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<style>
+
+    .pic {border: 2px solid #808080}
+</style>
+
+<h2 id="Centered">{{ title }}</h2>
+
+<h3>{{ message }}</h3>
+
+<img class="pic" align="right"  src="{% static 'app/content/images/we.png'%}" alt="Картинка" width="480" height="209" >
+
+
+    <b>Для связи с правообладателем сайта:</b><br />
+    <b>E-mail: FanaticFootball@mail.ru</b>
+     <address>
+    <strong>E-mail:</strong>   <a href="FanaticFootball@mail.ru">E-mail</a><br />
+    </address>
+    <b>Skype: FanaticFootba11</b>
+    <address>
+    <strong>Skype:</strong> <a href="FanaticFootba11">Skype</a>
+    </address>
+
+    <b>Контактные данные разработчика:</b><br />
+    <b>Разработчик сайта</b><br />
+    <b>Телефон: 90-73-32</b><br />
+   
+    <br />
+    
+
+{% endblock %}
